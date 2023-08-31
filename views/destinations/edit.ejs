@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Edit destination</title>
+</head>
+
+<body>
+    <h1>Edit</h1>
+    <form action="/destinations/<%= destination._id %>?_method=PUT" method="POST">
+
+        <label for="country">Country</label>
+        <input type="text" class="form-control" name="country" id="country" value="<%= destination.country %>" required>
+
+        <label for="city">City</label>
+        <input type="text" class="form-control" name="city" id="city" value="<%= destination.city %>" required>
+
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" value="<%= destination.name %>" required>
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10"
+            required><%= destination.description %></textarea>
+
+        <!-- <label for="image">Image</label>
+        <input type="file" name="image" value="<%= destination.image %>"> -->
+
+        <button type="submit">Update Destination</button>
+    </form>
+    <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
+        <button type="submit">delete</button>
+    </form>
+
+    <form action="/destinations/<%= destinationIdx %>?_method=DELETE" method="POST">
+        <button type="submit">delete</button>
+    </form>
+
+    <%- include('../partials/footer') %>
+</body>
+
+</html>
