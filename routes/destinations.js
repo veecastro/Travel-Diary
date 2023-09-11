@@ -3,17 +3,17 @@ var router = express.Router();
 
 var destinationsCtrl = require('../controllers/destinations');
 
+router.get('/destinations', destinationsCtrl.index);
 /* GET users listing. */
-router.get('/new', destinationsCtrl.new);
-router.post('/', destinationsCtrl.create);
+router.get('/destinations/new', destinationsCtrl.new);
+router.post('/destinations', destinationsCtrl.create);
+router.get('/destinations/:id', destinationsCtrl.show);
 
 
-router.get('/:id/edit', destinationsCtrl.edit);
-router.put('/:id', destinationsCtrl.update);
-router.get('/:id', destinationsCtrl.show);
-router.delete('/:id', destinationsCtrl.delete);
+router.get('/destinations/:id/edit', destinationsCtrl.edit);
+router.put('/destinations/:id', destinationsCtrl.update);
+router.delete('/destinations/:id', destinationsCtrl.delete);
 
-router.get('/', destinationsCtrl.index);
 
 
 

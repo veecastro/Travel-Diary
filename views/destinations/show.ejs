@@ -16,15 +16,17 @@
 
     <body>
         <h1>Destination Detail</h1>
-        <h2>
+        <div>Name: </div>
+        <div>
             <%= destination.name %>
-        </h2>
-        <h3>
-            <%= destination.city %>, <%= destination.country %>
-        </h3>
-        <p>
-            <%= destination.description %>
-        </p>
+        </div>
+
+        <div>Country: </div>
+        <div>
+            <%= destination.country %>
+        </div>
+
+
         <img src="<%= destination.image %>" alt="<%= destination.name %>">
         <a href="/destinations">Back</a>
         <a href="/destinations/<%= destination._id %>/edit">Edit</a>

@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const destinationSchema = new Schema(
+
+
+const destinationSchema = new mongoose.Schema(
     {
         name: { type: String, required: true },
         country: { type: String, required: true },
         city: { type: String, required: true },
         // images: { type: String, required: true },
-        description: { type: String, required: true },
+        description: { type: String, required: false },
 
     },
     {
@@ -15,5 +16,9 @@ const destinationSchema = new Schema(
     }
 );
 
-module.exports = mongoose.model('Destination', destinationSchema);
+const Destination = mongoose.model('Destination', destinationSchema);
+
+
+
+module.exports = Destination;
 

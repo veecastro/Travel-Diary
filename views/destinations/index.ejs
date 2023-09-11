@@ -15,21 +15,19 @@
     <%- include('../partials/header') %>
 
         <ul>
-
-            <% destinations.forEach(function(d, idx) { %>
+            <% destinations.forEach(function(d) { %>
                 <li>
-                    <!-- <form action="/destinations/<%= idx %>?_method=DELETE"></form> -->
-                    <a href="/destinations/<%= idx %>">
+                    <a href="/destinations/<%= d._id %>">
                         <%= d.name %>
                     </a>
                 </li>
-                <form action="/destinations/<%= d.id %>?_method=DELETE" class="delete-form" method="POST">
+                <form action="/destinations/<%= d._id %>?_method=DELETE" class="delete-form" method="POST">
                     <button type="submit">X</button>
                 </form>
-
+                <a href="/destinations/<%= d._id %>/edit">Edit</a>
                 <% }); %>
-
         </ul>
+
         <%- include('../partials/footer') %>
 </body>
 
