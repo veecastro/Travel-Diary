@@ -43,6 +43,12 @@ async function newDestination(req, res) {
 
 async function create(req, res) {
   const destination = await Destination.create(req.body);
+
+
+  // req.body.user = req.user._id;
+  // req.body.userName = req.user.name;
+  // req.body.userAvatar = req.user.avatar;
+
   res.redirect(`/destinations/${destination._id}`);
 }
 
@@ -51,6 +57,9 @@ async function create(req, res) {
 
 async function deleteDestination(req, res) {
   await Destination.findByIdAndDelete(req.params.id);
+  // req.body.user = req.user._id;
+  // req.body.userName = req.user.name;
+  // req.body.userAvatar = req.user.avatar;
   res.redirect('/destinations');
 }
 
@@ -72,6 +81,9 @@ async function edit(req, res) {
 
 async function update(req, res) {
   await Destination.findByIdAndUpdate(req.params.id, req.body);
+  // req.body.user = req.user._id;
+  // req.body.userName = req.user.name;
+  // req.body.userAvatar = req.user.avatar;
   const destination = await Destination.find({});
   res.render('destinations/index', {
     destinations: destination

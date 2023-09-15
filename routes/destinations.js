@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var destinationsCtrl = require('../controllers/destinations');
+var upload = require('../config/file-upload');
+// var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/destinations', destinationsCtrl.index);
 /* GET users listing. */

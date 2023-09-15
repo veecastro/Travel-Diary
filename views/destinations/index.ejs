@@ -13,22 +13,36 @@
 
 <body>
     <%- include('../partials/header') %>
+        <div class="carousel-container">
+            <div class="carousel">
+                <ul class="carousel-slides">
+                    <!-- Loop through destinations and display as list items -->
+                    <% destinations.forEach(function(d) { %>
+                        <li class="carousel-slide">
+                            <a href="/destinations/<%= d._id %>" class="destination-link">
+                                <img src="<%= d.image %>" alt="<%= d.name %>">
+                                <h3>
+                                    <%= d.name %>, <%= d.country %>
 
-        <ul>
-            <% destinations.forEach(function(d) { %>
-                <li>
-                    <a href="/destinations/<%= d._id %>">
-                        <%= d.name %>
-                    </a>
-                </li>
-                <form action="/destinations/<%= d._id %>?_method=DELETE" class="delete-form" method="POST">
-                    <button type="submit">X</button>
-                </form>
-                <a href="/destinations/<%= d._id %>/edit">Edit</a>
-                <% }); %>
-        </ul>
+                                </h3>
+                            </a>
+                            <div class="carousel-buttons">
+                                <a href="/destinations/<%= d._id %>/edit" class="button">Edit</a>
+                                <form action="/destinations/<%= d._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="button">Delete</button>
+                                </form>
+                            </div>
+                        </li>
+                        <% }); %>
+                </ul>
+                <button class="prev-button">Previous</button>
+                <button class="next-button">Next</button>
+            </div>
+        </div>
 
         <%- include('../partials/footer') %>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="/javascripts/carousel.js"></script>
 </body>
 
 </html>

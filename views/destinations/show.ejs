@@ -15,27 +15,37 @@
 
 
     <body>
-        <h1>Destination Detail</h1>
-        <div>Name: </div>
-        <div>
-            <%= destination.name %>
-        </div>
+        <h1 class="destination-title">Destination Detail</h1>
+        <section class="details">
 
-        <div>Country: </div>
-        <div>
-            <%= destination.country %>
-        </div>
+            <!-- <div>Name: </div> -->
+            <div>
+                <%= destination.name %>
+            </div>
+
+            <!-- <div>Country: </div> -->
+            <div>
+                <%= destination.country %>
+            </div>
+
+            <!-- <div>
+                Description:
+            </div> -->
+            <div>
+                <%= destination.description %>
+            </div>
 
 
-        <img src="<%= destination.image %>" alt="<%= destination.name %>">
-        <a href="/destinations">Back</a>
-        <a href="/destinations/<%= destination._id %>/edit">Edit</a>
+            <img src="<%= destination.image %>" alt="<%= destination.name %>">
+            <a href="/destinations" class="button">Back</a>
+            <a href="/destinations/<%= destination._id %>/edit" class="button">Edit</a>
 
 
-        <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
-            <button type="submit">delete</button>
-        </form>
+            <form action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="button">delete</button>
+            </form>
 
+        </section>
 
 
 
