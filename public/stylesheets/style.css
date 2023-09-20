@@ -1,11 +1,27 @@
+.page-title {
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 40px;
+  letter-spacing: 1rem;
+  font-weight: lighter;
+}
 .delete-form {
+  align-items: center;
   display: inline-block;
-  margin-right: 10px;
+  padding: 10px 0 10px 0;
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .button {
+  align-items: center;
   display: inline-block;
-  padding: 10px 10px;
+  padding: 10px 45px 10px 45px;
   background-color: #e7e5d1;
   color: #fff;
   text-decoration: none;
@@ -21,6 +37,11 @@ li {
   list-style: none;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 .main-title {
   text-align: center;
   font-family: "Cinzel", serif;
@@ -29,30 +50,47 @@ li {
 }
 
 .navbar {
+  text-decoration: none;
   background-color: #f5f5f5;
   border-bottom: 1px solid #e3e3e3;
   text-align: center;
   font-family: "Cinzel", serif;
   font-weight: lighter;
   letter-spacing: 3px;
-  text-decoration: none;
 }
 
 .destination-title {
+  padding: 10px 0 15px 0;
   font-family: "Cinzel", serif;
   text-align: center;
-  font-size: 30px;
+  font-size: 10px;
   letter-spacing: 1rem;
 }
 
 .details {
+  padding: 25px 0 30% 0;
   font-family: "Cinzel", serif;
   text-align: center;
   font-size: 15px;
   letter-spacing: 3px;
 }
 
-.destination-list {
+.detail-place {
+  padding: 25px 0 10% 0;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1rem;
+}
+
+.detail-photo {
+  padding: 25px 0 30% 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .destination-list {
   font-family: "Cinzel", serif;
   text-align: center;
   font-size: 20px;
@@ -60,6 +98,15 @@ li {
 }
 
 .destination-list-item {
+  font-family: "Cinzel", serif;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.2rem;
+} */
+
+.destination-link {
+  text-decoration: none;
+  color: black;
   font-family: "Cinzel", serif;
   text-align: center;
   font-size: 20px;
@@ -76,8 +123,8 @@ li {
 .carousel {
   position: relative;
   align-items: center;
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  /* max-width: 800px; */
   overflow: hidden;
 }
 
@@ -86,40 +133,84 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .carousel-slide {
   flex: 0 0 100%;
   /* Each slide takes up 100% width */
   text-align: center;
-  padding: 20px;
+  padding: 0;
 }
 
 .carousel-slide img {
   max-width: 100%;
 }
 
-/* Style for navigation buttons (optional) */
-.carousel-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  height: 70px;
-}
-
 .prev-button,
 .next-button {
   display: inline-block;
-  padding: 10px 10px;
-  background-color: #e7e5d1;
-  color: #fff;
+  padding: 5px 2px 5px 2px;
+  background-color: #e7e5d1ce;
+  color: #8d8b8b;
   text-decoration: none;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
-  font-family: "Courier New", Courier, monospace;
+  margin: 5px;
+  font-family: "marcellus", serif;
   font-size: 15px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.form-group {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc; /* Add a bottom border to create lines */
+  padding-bottom: 10px; /* Add padding to separate labels from lines */
+}
+
+label {
+  display: block;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.2rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 7px;
+  margin: 5px;
+  font-family: "Marcellus", serif;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.form-group {
+  font-family: "Marcellus", serif;
+}
+
+.footer {
+  text-align: center;
+
+  color: black;
+  font-family: "Cinzel", serif;
+
+  font-size: 12px;
+}
+
+.footer-links {
+  text-decoration: underline;
+  color: black;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
 }

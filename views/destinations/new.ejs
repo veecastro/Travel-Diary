@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>New Destination</title>
 </head>
 
 <body>
+    <h1 class="page-title">new destination</h1>
     <% include('../partials/header') %>
-        <form action="/destinations" method="POST">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div>
-                <label for="country">Country:</label>
-                <input type="text" id="country" name="country" required>
-            </div>
-            <div>
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" required>
-            </div>
-            <div>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
-            </div>
-            <!-- <div>
-                <label for="image">Image URL:</label>
-                <input type="file" id="image" name="image" accept="image/">
-            </div> -->
-            <div>
-                <button type="submit">Create Destination</button>
-            </div>
-        </form>
+        <div class="form-container">
+            <form action="/destinations" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City/State:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div>
+                    <label for="image">Image URL:</label>
+                    <br>
+                    <input type="file" id="image" name="image" accept="image/">
+                </div>
+                <br>
+                <div class="button-container">
+                    <button type="submit" class="button">Create Destination</button>
+
+                    <a href="/destinations" class="button">home</a>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+
         <%- include('../partials/footer') %>
 
 </body>

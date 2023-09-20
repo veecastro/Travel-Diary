@@ -16,7 +16,7 @@
         <div class="carousel-container">
             <div class="carousel">
                 <ul class="carousel-slides">
-                    <!-- Loop through destinations and display as list items -->
+
                     <% destinations.forEach(function(d) { %>
                         <li class="carousel-slide">
                             <a href="/destinations/<%= d._id %>" class="destination-link">
@@ -26,20 +26,23 @@
 
                                 </h3>
                             </a>
-                            <div class="carousel-buttons">
+                            <!-- <div class="carousel-buttons">
                                 <a href="/destinations/<%= d._id %>/edit" class="button">Edit</a>
                                 <form action="/destinations/<%= d._id %>?_method=DELETE" method="POST">
                                     <button type="submit" class="button">Delete</button>
                                 </form>
-                            </div>
+                            </div> -->
+
                         </li>
                         <% }); %>
                 </ul>
-                <button class="prev-button">Previous</button>
-                <button class="next-button">Next</button>
             </div>
         </div>
 
+        <button class="prev-button">Previous</button>
+        <button class="next-button">Next</button>
+        <br>
+        <br>
         <%- include('../partials/footer') %>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="/javascripts/carousel.js"></script>
